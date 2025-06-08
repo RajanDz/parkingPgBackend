@@ -31,3 +31,8 @@ function manageProfile(){
     const sideMenu = document.querySelector('.side-menu');
     sideMenu.classList.remove("visible");
 }
+
+function closeManageProfile(){
+    const profile = document.querySelector(".user-container");
+    profile.classList.remove("visible");
+}
