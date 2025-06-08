@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="map-container">
+        <div id="map"></div>
+        <div class="menu-button">
+            <span class="material-symbols-outlined" onclick="showMenu()">menu</span>
+        </div>
+    </div>
+    
+
+    <div class="side-menu" >
+        <div class="menu">
+            <div class="menu-header">
+            <h1>Parking PG</h1>
+            </div>
+        <div class="menu-options">
+            <ul>
+                <li>
+                    <p onclick="manageProfile()">Profile</p>
+                </li>
+                <li>
+                    <p>Settings</p>
+                </li>
+                <li>
+                    <p>History</p>
+                </li>
+                <li>
+                    <p>Support</p>
+                </li>
+            </ul>
+        </div>
+            <div class="menu-footer">
+                <img src="./gallery/parkingLogo.png" alt="logo">
+                <button onclick="hideMenu()">NAZAD</button>
+            </div>
+        </div>     
+    </div>
+
+
+    <div class="user-container">
+        <div class="profile">
+            <div class="profile-header">
+                <h1>Profile</h1>
+            </div>
+            <div class="user-informations">
+                <div class="informations">
+                    <p>Test</p>
+                    <input 
+                    type="text"
+                    >
+                </div>
+                <div class="informations">
+                    <p>Test</p>
+                    <input 
+                    type="text"
+                    >
+                </div>
+                <div class="informations">
+                    <p>Test</p>
+                    <input 
+                    type="text"
+                    >
+                </div>
+                <div class="informations">
+                    <p>Test</p>
+                    <input 
+                    type="text"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     <script src="script.js"></script>
+</body>
+</html>

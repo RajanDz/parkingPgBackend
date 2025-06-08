@@ -1,0 +1,148 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* npr. bold */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+.map-container{
+    height: 100%;
+}
+
+#map {
+    position: relative;
+    height: 100%;
+}
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 20px;
+}
+.menu-button span {
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.4s ease;
+}
+span:hover{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(190, 188, 188);
+}
+
+.side-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 250px;
+    background-color: white;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.side-menu.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+.menu-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu-header h1{
+    font-weight: 500;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+li {
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform  0.3s ease;
+    font-size: large;
+}
+li:hover{
+   transform: scale(1.1);
+}
+.menu-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu-footer img{
+    height: 150px;
+}
+.menu-footer button {
+    border: 2px solid black;
+    background-color: white;
+    width: 100px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.4s ease;
+}
+.menu-footer button:hover{
+    color: white;
+    background-color: black;
+}
+.hidden {
+    display: none;
+}
+
+.user-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    transform: translateX(200px);
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transition: transform 0.2s ease-out,opacity 0.2s ease-out;
+    height: 500px;
+    width: 550px;
+    background-color: white;
+    border-radius: 5px;
+}
+.user-container.visible{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+.profile-header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.user-informations{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
