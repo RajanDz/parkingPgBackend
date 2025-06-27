@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    name: MySQL Connection
+    url: jdbc:mysql://localhost:3306/parkingpg
+    username: root
+    password: pgsator05
+    driver-class-name: com.mysql.cj.jdbc.Driver
+jpa:
+  show-sql: true
+  ddl-auto: update
+
+app:
+  jwtSecret: ThisIsASecretKeyWithAtLeast32CharactersKeyWithAtLeast32CharactersKeyWithAtLeast32Characters
+  jwtExpirationMs: 600000
