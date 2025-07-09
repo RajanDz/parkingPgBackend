@@ -1,6 +1,7 @@
 package com.parkingPg.parkingPg.security;
 
 
+import com.parkingPg.parkingPg.security.jwt.AuthTokenFilter;
 import com.parkingPg.parkingPg.service.UserDetailsImpl;
 import com.parkingPg.parkingPg.service.UserDetailsServiceImpl;
 import org.apache.catalina.filters.CorsFilter;
@@ -18,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -30,9 +32,10 @@ import java.util.List;
 public class WebConfig {
 
     private final UserDetailsServiceImpl userDetailsService;
-
-    public WebConfig(UserDetailsServiceImpl userDetailsService) {
+    private final AuthTokenFilter authTokenFilter;
+    public WebConfig(UserDetailsServiceImpl userDetailsService, AuthTokenFilter authTokenFilter) {
         this.userDetailsService = userDetailsService;
+        this.authTokenFilter = authTokenFilter;
     }
 
     @Bean
@@ -67,8 +70,11 @@ public class WebConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorizeRequests ->
-                        authorizeRequests.anyRequest().permitAll());
+                        authorizeRequests.requestMatchers("/auth/**").permitAll()
+                                .anyRequest().authenticated());
 
+
+        http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 

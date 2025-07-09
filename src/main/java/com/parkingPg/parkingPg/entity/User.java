@@ -29,13 +29,16 @@ public class User {
     private String lastName;
 
     @NonNull
+    @Column(name = "email")
+    private String email;
+
+    @NonNull
     @Column(name = "username")
     private String username;
 
     @NonNull
     @Column(name = "password")
     private String password;
-
 
     @NonNull
     @ManyToMany(fetch = FetchType.EAGER)

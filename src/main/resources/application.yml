@@ -8,6 +8,18 @@ spring:
     username: root
     password: pgsator05
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mail:
+      host: smtp.gmail.com
+      port: 587
+      username: dzaferadzovicrajan@gmail.com
+      password: nmqa mnus idkg mxcm
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
 jpa:
   show-sql: true
   ddl-auto: update
@@ -15,3 +27,7 @@ jpa:
 app:
   jwtSecret: ThisIsASecretKeyWithAtLeast32CharactersKeyWithAtLeast32CharactersKeyWithAtLeast32Characters
   jwtExpirationMs: 600000
+  sendgrid:
+    api-key: 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
+    from-email: dzaferadzovicrajan@gmail.com
+
