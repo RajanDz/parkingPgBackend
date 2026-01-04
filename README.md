@@ -9,7 +9,7 @@ Backend service for tracking parking garage availability using Spring Boot and M
 
 ## 📌 Features
 - REST API for garage and parking spot management
-- PostgreSQL database integration
+- MySQL database integration
 
 ## 🛠 Tech Stack
 - Java
